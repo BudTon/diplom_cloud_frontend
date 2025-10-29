@@ -4,6 +4,7 @@ import { Formik, Field, Form } from "formik";
 import { useNavigate } from 'react-router-dom';
 import { invisibleLoginForm } from '../redux/slices/formSlice';
 
+
 export const LoginForm = () => {
   const dispatch = useDispatch();
   const { results } = useSelector((state) => state.user);
@@ -12,7 +13,6 @@ export const LoginForm = () => {
 
   if (results.status !== 'ok') {
     console.warn('Пользователь еще неавторизирован');
-  } else {
   }
 
   return (

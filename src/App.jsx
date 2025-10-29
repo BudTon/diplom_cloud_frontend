@@ -3,7 +3,7 @@ import Menu from './components/Menu';
 import HomePage from './pages/HomePage';
 import StorageFilesPage from './pages/StorageFilesPage';
 import UserAdminPage from './pages/UserAdminPage';
-import UserPage from './pages/UserPage';
+// import UserPage from './pages/UserPage';
 
 import "./styles.css";
 

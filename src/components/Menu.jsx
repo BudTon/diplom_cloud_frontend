@@ -7,7 +7,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import '../App.css'
 
 export default function Menu() {
-  // const dispatch = useDispatch();
   const hiddenPages = useSelector((state) => state.menu.hiddenPages);
   console.log(hiddenPages, ' - hiddenPages');
 

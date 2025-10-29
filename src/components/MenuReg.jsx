@@ -1,6 +1,6 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { login, logout } from '../redux/slices/menuRegSlice';
-import { visibleLoginForm } from '../redux/slices/formSlice';
+import { visibleLoginForm, visibleRegistrationForm } from '../redux/slices/formSlice';
 import { hidden, nothidden } from '../redux/slices/menuSlice';
 import { useNavigate } from 'react-router-dom';
 import './menu-reg.css';
@@ -12,7 +12,7 @@ export default function MenuReg() {
 
   const handleRegistration = () => {
     dispatch(login());
-    dispatch(visible());
+    dispatch(visibleRegistrationForm());
     dispatch(nothidden());
   };
 
@@ -27,18 +27,7 @@ export default function MenuReg() {
     dispatch(logout());
     navigate('/');
     location.reload(true);
-    // dispatch(hidden());
-
-    // dispatch(clear());
-    // setIsModalOpen(false);
-
   };
-
-  // useEffect(() => {
-  //   if (isLoggedIn) {
-  //     // navigate('/storage');
-  //   }
-  // }, [isLoggedIn, navigate]);
 
   return (
     <>

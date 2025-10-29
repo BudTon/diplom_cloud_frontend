@@ -7,11 +7,6 @@ export const RegisterForm = () => {
   const dispatch = useDispatch();
   const { results, loading, errorMessage } = useSelector((state) => state.user);
 
-  if (results && results.status === 'ok') {
-    // Переход на страницу после успешной регистрации
-    // window.location.replace('/storege');
-  }
-
   return (
     <Formik
       initialValues={{ username: "", email: "", password: "" }}

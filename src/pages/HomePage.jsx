@@ -1,9 +1,9 @@
-import { FineFilm } from "../components/FindFilm"
+// import { FineFilm } from "../components/FindFilm"
 
 export default function HomePage() {
   return (
     <>
-      <FineFilm />
+      {/* <FineFilm /> */}
     </>
   )
 }

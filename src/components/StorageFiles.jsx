@@ -5,11 +5,7 @@ import FileProperty from './FileProperty';
 import { Formik, Field, Form } from "formik";
 import { fetchFileUploaded } from '../fetch/fetchFileUploaded';
 import { useNavigate } from 'react-router-dom';
-import './card-film.css'
-import './find-film.css'
 import './form-load.css'
-import './card-selected-film.css'
-import './favourite.css'
 
 export const StorageFiles = () => {
   const dispatch = useDispatch();

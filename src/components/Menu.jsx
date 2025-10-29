@@ -1,5 +1,6 @@
 import { NavLink } from 'react-router-dom';
 import MenuReg from './MenuReg'
+import LoginForm from './LoginForm'
 import { useSelector, useDispatch } from 'react-redux';
 
 
@@ -13,7 +14,7 @@ export default function Menu() {
   return (
     <>
       <MenuReg />
-      
+      <LoginForm />
       <nav className="menu">
         <NavLink className={({ isActive }) => isActive ? 'menu__item menu__item-active' : 'menu__item'} to='/'>Главная</NavLink>
         <NavLink className={({ isActive }) => isActive ? 'menu__item menu__item-active' : `menu__item ${hiddenPages}`} to='/storage'>Хранилище</NavLink>

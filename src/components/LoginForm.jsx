@@ -2,38 +2,47 @@ import { useSelector, useDispatch } from "react-redux";
 import { fetchLoginUser } from '../fetch/fetchLoginUser'
 import { Formik, Field, Form } from "formik";
 import { useNavigate } from 'react-router-dom';
+import { invisibleLoginForm } from '../redux/slices/formSlice';
 
 export const LoginForm = () => {
-  // const dispatch = useDispatch();
-  // const { results, loading, errorMessage } = useSelector((state) => state.user);
-  // const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const { results } = useSelector((state) => state.user);
+  const navigate = useNavigate();
+  const isModalLoginForm = useSelector((state) => state.form.isModalLoginForm);
 
-  // if (results.status === 'ok') {
-  //   navigate('/storage');
-  // } else {
-  //   console.warn('Пользователь еще неавторизирован');
-  // }
+  if (results.status !== 'ok') {
+    console.warn('Пользователь еще неавторизирован');
+  } else {
+  }
 
   return (
     <>
+
+      {isModalLoginForm && (
+        <div className="modal-box">
+          <div className="modal-file">
+            <Formik
+              initialValues={{ username: "", password: "" }}
+              validate={(values) => {
+              }}
+              onSubmit={async (values) => {
+                await dispatch(fetchLoginUser(values)).unwrap();
+                dispatch(invisibleLoginForm())
+                navigate('/storage');
+              }}
+            >
+              {({ isSubmitting }) => (
+                <Form>
+                  <Field type="text" name="username" placeholder="Username" />
+                  <Field type="password" name="password" placeholder="Password" />
+                  <button type="submit" disabled={isSubmitting}>Login</button>
+                </Form>
+              )}
+            </Formik>
+          </div>
+        </div>
+      )}
     </>
-    // <Formik
-    //   initialValues={{ username: "", password: "" }}
-    //   validate={(values) => { }}
-    //   onSubmit={async (values) => {
-    //     console.log(values, 'values--------');
-    //     await dispatch(fetchLoginUser(values)).unwrap(); // unwrap() используется для обработки ошибок
-    //   }}
-    // >
-    //   {/* {({ isSubmitting }) => (
-    //     // <Form>
-    //     //   <Field type="text" name="username" placeholder="Username" />
-    //     //   <Field type="password" name="password" placeholder="Password" />
-    //     //   <button type="submit" disabled={isSubmitting || loading}>Login</button>
-    //     //   {errorMessage && <div style={{ color: "red" }}>{errorMessage}</div>}
-    //     // </Form>
-    //   )} */}
-    // </Formik>
   );
 };
 

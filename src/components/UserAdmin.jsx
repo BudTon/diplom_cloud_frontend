@@ -17,7 +17,7 @@ export const RegisterForm = () => {
       initialValues={{ username: "", email: "", password: "" }}
       validate={(values) => { }}
       onSubmit={async (values) => {
-        await dispatch(fetchRegisterUser(values)).unwrap(); // Отправляем запрос на регистрацию
+        await dispatch(fetchRegisterUser(values)).unwrap();
       }}
     >
       {({ isSubmitting }) => (

@@ -73,10 +73,10 @@ td {
   text-align: center;
 }
 
-.close-button-file {
+
+
+/* .close-button-file {
   position: absolute;
-  top: 150px;
-  right: 170px;
   cursor: pointer;
   font-size: 24px;
   color: rgb(20, 19, 19);
@@ -87,7 +87,7 @@ td {
 
 .close-button-file:hover {
   color: #dc3545;
-}
+} */
 
 .close-button-file::before {
   content: "";
@@ -98,6 +98,10 @@ td {
   width: 20px;
   height: 2px;
   background-color: currentColor;
+}
+
+.btn-all {
+  margin-bottom: 10px;
 }
 
 .close-button-file::after {

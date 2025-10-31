@@ -31,7 +31,7 @@ const fileSlice = createSlice({
       builder.addCase(fetchFileUser.fulfilled, (state, action) => {
         state.loading = false;
         console.log(action.payload, ' - action.payload');
-        console.log(action.payload.Search, ' - action.payload.Search');
+        // console.log(action.payload.Search, ' - action.payload.Search');
 
         state.results = action.payload || [];
         if (state.results != []) {

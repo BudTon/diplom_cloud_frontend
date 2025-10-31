@@ -106,7 +106,6 @@ export default function FileProperty({ file, index }) {
           <td>
             <div className="modal-box">
               <div className="modal-file">
-                <button className="close-button-file" onClick={handleCloseModal}></button>
                 <div id="toast"></div>
                 <h2>Детали файла</h2>
                 <p>type: {type}</p>
@@ -119,6 +118,7 @@ export default function FileProperty({ file, index }) {
                 <div className="btn-all">
                   <button className="delete-button-file" onClick={handleDeleteFile}>Удалить</button>
                   <button className="download-button-file" onClick={handleDownloadFile}>Скачать</button>
+                  <button className="button-login-form-cancel" onClick={handleCloseModal}>Cancel</button>
                 </div>
               </div>
             </div>

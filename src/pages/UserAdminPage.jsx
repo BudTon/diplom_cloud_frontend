@@ -1,9 +1,9 @@
-import { RegisterForm } from "../components/UserAdmin"
+import { StorageUsers } from "../components/StorageUsers"
 
 export default function UserPage() {
   return (
     <>
-      <RegisterForm />
+      <StorageUsers />
     </>
   )
 }

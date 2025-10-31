@@ -1,7 +1,7 @@
 import { useDispatch, useSelector } from 'react-redux';
 import { useEffect, useState } from 'react';
 import { fetchFileUser } from '../fetch/fetchFileUser';
-import FileProperty from './FileProperty';
+import UserProperty from './UserProperty';
 import { Formik, Field, Form } from "formik";
 import { fetchFileUploaded } from '../fetch/fetchFileUploaded';
 import { useNavigate } from 'react-router-dom';
@@ -52,14 +52,15 @@ export const StorageUsers = () => {
               <th>email</th>
               <th>количество файов</th>
               <th>размер файлов</th>
+              <th>статус админа</th>
             </tr>
           </thead>
           <tbody>
             {
-                  file.users !== undefined &&
-                  file.users.length > 0 &&
-                  file.users.map((user, index) => (
-                    <UserProperty key={user.id} user={user} index={index + 1} />
+              file.users !== undefined &&
+              file.users.length > 0 &&
+              file.users.map((user, index) => (
+                <UserProperty key={user.id} user={user} index={index + 1} />
               ))
             }
           </tbody>

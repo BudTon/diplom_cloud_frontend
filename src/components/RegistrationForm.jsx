@@ -4,7 +4,7 @@ import { Formik, Field, Form } from "formik";
 import { useNavigate } from 'react-router-dom';
 import { invisibleRegistrationForm } from '../redux/slices/formSlice';
 import { logout } from "../redux/slices/menuRegSlice";
-
+import './register-form.css'
 const RegistrationForm = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();

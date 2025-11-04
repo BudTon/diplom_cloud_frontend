@@ -67,9 +67,8 @@ export const StorageFiles = () => {
       )}
 
       {isModalUploadOpen && (
-        <div className="modal" >
-          <button className="close-button" onClick={handleCloseModalUpload}>Закрыть</button>
-          <div className="modal-content">
+        <div className="modal-box-form-load" >
+          <div className="modal-form-load">
             <div className="form-container">
               <h2 className="form-title">Загрузка файла</h2>
               <Formik
@@ -121,8 +120,12 @@ export const StorageFiles = () => {
                       />
                       {touched.comment && errors.comment ? (<span className="errors">{errors.comment}</span>) : null}
                     </div>
-                    <button type="submit" className="submit-button" disabled={isSubmitting}>
+
+                    <button type="submit" className="button-load-form-submit" disabled={isSubmitting}>
                       Загрузить файл
+                    </button>
+                    <button className="button-load-form-cancel" onClick={handleCloseModalUpload}>
+                      Закрыть
                     </button>
                   </form>
                 )}

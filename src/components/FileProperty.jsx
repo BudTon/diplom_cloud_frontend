@@ -109,8 +109,8 @@ export default function FileProperty({ file, index }) {
                 <div id="toast"></div>
                 <h2>Детали файла</h2>
                 <p>type: {type}</p>
-                <p className="rename-button-file" onClick={handleRenameFile}>имя файла: {file_name}</p>
-                <p className="rename-button-file" onClick={handleChangeCommentFile}>комментарий: {comment ? comment : "-"}</p>
+                <p className="rename-button-file" onClick={handleRenameFile}>имя файла: {file_name} 🖊️</p>
+                <p className="recomment-button-file" onClick={handleChangeCommentFile}>комментарий: {comment ? comment : "-"} 🖊️</p>
                 <p>дата загрузки: {created_at ? dateTime(created_at) : "-"}</p>
                 <p>дата последнего скачивания: {lastDownloadDate ? dateTime(lastDownloadDate) : "-"}</p>
                 <p>размер: {Math.round(size / 1024)} KB</p>
@@ -118,7 +118,7 @@ export default function FileProperty({ file, index }) {
                 <div className="btn-all">
                   <button className="delete-button-file" onClick={handleDeleteFile}>Удалить</button>
                   <button className="download-button-file" onClick={handleDownloadFile}>Скачать</button>
-                  <button className="button-login-form-cancel" onClick={handleCloseModal}>Cancel</button>
+                  <button className="button-login-form-cancel" onClick={handleCloseModal}>Отмена</button>
                 </div>
               </div>
             </div>

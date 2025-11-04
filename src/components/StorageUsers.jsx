@@ -14,29 +14,15 @@ export const StorageUsers = () => {
   const loading = useSelector((state) => state.file.loading);
   const error = useSelector((state) => state.file.error);
 
-  const [isModalUploadOpen, setIsModalUploadOpen] = useState(false);
-
-  const navigate = useNavigate();
-
-  const handleCloseModalUpload = () => {
-    setIsModalUploadOpen(false);
-    navigate('/storage');
-  };
-
-  const handleOpenModalUpload = () => {
-    setIsModalUploadOpen(true);
-  };
-
   useEffect(() => {
-    console.log(results, ' - dispatch, results');
-    dispatch(fetchFileUser(results));
-  }, [dispatch, results]);
+    console.log(file, ' - dispatch, file');
+    // dispatch(StorageUsers());
+  }, [dispatch, file]);
 
-  console.log(file.users, '-users');
+  // console.log(file, '-file state.file.results');
 
   return (
     <>
-      <button className="open-button" onClick={handleOpenModalUpload}>Загрузка файл</button>
       <h1>Список пользователей</h1>
       {loading ? (
         <p>Загружаю...</p>
@@ -53,6 +39,7 @@ export const StorageUsers = () => {
               <th>количество файов</th>
               <th>размер файлов</th>
               <th>статус админа</th>
+              <th>Действие</th>
             </tr>
           </thead>
           <tbody>

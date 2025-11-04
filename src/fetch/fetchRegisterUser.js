@@ -2,11 +2,13 @@ import { createAsyncThunk } from '@reduxjs/toolkit';
 
 export const fetchRegisterUser = createAsyncThunk(
   'register_user',
-  async ({ username, email, password }, { rejectWithValue }) => {
+  async ({ username, firstname, email, password, isStaff }, { rejectWithValue }) => {
     console.log(
-      'username:', username,'\n',
+      'username:', username, '\n',
+      'firstname:', firstname,'\n',
       'email:', email, '\n',
       'password:', password, '\n',
+      'is_staff:', isStaff, '\n',
       '-------fetchRegisterUser-------');
 
     try {
@@ -18,7 +20,7 @@ export const fetchRegisterUser = createAsyncThunk(
           'Content-Type': 'application/json',
           // 'Authorization': `Token ${resuls.token}`,  // Здесь передаётся токен
         },
-        body: JSON.stringify({ username: username, email: email, password: password })
+        body: JSON.stringify({ username: username, firstname:firstname, email: email, password: password, is_staff: isStaff })
       });
       console.log(response, ' - data');
 

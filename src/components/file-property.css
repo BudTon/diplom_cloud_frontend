@@ -146,6 +146,7 @@ td {
   box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 }
 
+.recomment-button-file:hover,
 .rename-button-file:hover {
   color: green;
 }
